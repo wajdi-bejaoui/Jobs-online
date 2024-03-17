@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>profile</title>
+
+   <!-- font awesome cdn link  -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+
+   <!-- custom css file link  -->
+ <style>
+   
+   @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700&display=swap');
+
+:root{
+   --main-color:#8e44ad;
+   --red:#e74c3c;
+   --orange:#f39c12;
+   --light-color:#888;
+   --light-bg:#eee;
+   --black:#2c3e50;
+   --white:#fff;
+   --border:.1rem solid rgba(0,0,0,.2);
+}
+
+*{
+   font-family: 'Nunito', sans-serif;
+   margin:0; padding:0;
+   box-sizing: border-box;
+   outline: none; border:none;
+   text-decoration: none;
+}
+
+*::selection{
+   background-color: var(--main-color);
+   color:#fff;
+}
+
+html{
+   font-size: 62.5%;
+   overflow-x: hidden;
+}
+
+html::-webkit-scrollbar{
+   width: 1rem;
+   height: .5rem;
+}
+
+html::-webkit-scrollbar-track{
+   background-color: transparent;
+}
+
+html::-webkit-scrollbar-thumb{
+   background-color: var(--main-color);
+}
+
+body{
+   background-color: var(--light-bg);
+   padding-left: 30rem;
+}
+
+body.dark{
+   --light-color:#aaa;
+   --light-bg:#333;
+   --black:#fff;
+   --white:#222;
+   --border:.1rem solid rgba(255,255,255,.2);
+}
+
+body.active{
+   padding-left: 0;
+}
+
+section{
+   padding:2rem;
+   margin: 0 auto;
+   max-width: 1200px;
+}
+
+.heading{
+   font-size: 2.5rem;
+   color:var(--black);
+   margin-bottom: 2.5rem;
+   border-bottom: var(--border);
+   padding-bottom: 1.5rem;
+   text-transform: capitalize;
+}
+
+.inline-btn,
+.inline-option-btn,
+.inline-delete-btn,
+.btn,
+.delete-btn,
+.option-btn{
+   border-radius: .5rem;
+   color:#fff;
+   font-size: 1.8rem;
+   cursor: pointer;
+   text-transform: capitalize;
+   padding:1rem 3rem;
+   text-align: center;
+   margin-top: 1rem;
+}
+
+.btn,
+.delete-btn,
+.option-btn{
+   display: block;
+   width: 100%;
+}
+
+.inline-btn,
+.inline-option-btn,
+.inline-delete-btn{
+   display: inline-block;
+}
+
+.btn,
+.inline-btn{
+   background-color: var(--main-color);
+}
+
+.option-btn,
+.inline-option-btn{
+   background-color:var(--orange);
+}
+
+.delete-btn,
+.inline-delete-btn{
+   background-color: var(--red);
+}
+
+.inline-btn:hover,
+.inline-option-btn:hover,
+.inline-delete-btn:hover,
+.btn:hover,
+.delete-btn:hover,
+.option-btn:hover{
+   background-color: var(--black);
+   color: var(--white);
+}
+
+.flex-btn{
+   display: flex;
+   gap: 1rem;
+}
+
+
+   @media (max-width:450px){
+
+html{
+   font-size: 50%;
+}
+
+.flex-btn{
+   gap: 0;
+   flex-flow: column;
+}
+
+.home-grid .box-container{
+   grid-template-columns: 1fr;
+}
+
+.about .row .image img{
+   height: 25rem;
+}
+   }
+
+   .user-profile .info{
+   background-color: var(--white);
+   border-radius: .5rem;
+   padding: 2rem;
+}
+
+.user-profile .info .user{
+   text-align: center;
+   margin-bottom: 2rem;
+   padding: 1rem;
+}
+
+.user-profile .info .user img{
+   height: 10rem;
+   width: 10rem;
+   border-radius: 50%;
+   object-fit: cover;
+   margin-bottom: 1rem;
+}
+
+.user-profile .info .user h3{
+   font-size: 2rem;
+   color: var(--black);
+}
+
+.user-profile .info .user p{
+   font-size: 1.7rem;
+   color: var(--light-color);
+   padding: .3rem 0;
+}
+
+.user-profile .info .box-container{
+   display: flex;
+   flex-wrap: wrap;
+   gap: 1.5rem;
+}
+
+.user-profile .info .box-container .box{
+   background-color: var(--light-bg);
+   border-radius: .5rem;
+   padding: 2rem;
+   flex: 1 1 25rem;
+}
+
+.user-profile .info .box-container .box .flex{
+   display: flex;
+   align-items: center;
+   gap: 2rem;
+   margin-bottom: 1rem;
+}
+
+.user-profile .info .box-container .box .flex i{
+   font-size:2rem;
+   color: var(--white);
+   background-color: var(--black);
+   text-align: center;
+   border-radius: .5rem;
+   height: 5rem;
+   width: 5rem;
+   line-height: 4.9rem;
+}
+
+.user-profile .info .box-container .box .flex span{
+   font-size: 2.5rem;
+   color: var(--main-color);
+}
+
+.user-profile .info .box-container .box .flex p{
+   color: var(--light-color);
+   font-size: 1.7rem;
+}
+ </style>
+
+</head>
+<body>
+
+
+<section class="user-profile">
+
+   <h1 class="heading">your profile</h1>
+
+   <div class="info">
+
+      <div class="user">
+        
+         <a href="update.html" class="inline-btn">update profile</a>
+      </div>
+   
+      <div class="box-container">
+   
+         <div class="box">
+            <div class="flex">
+               <i class="fas fa-bookmark"></i>
+               <div>
+                  <span>4</span>
+                  <p>saved playlist</p>
+               </div>
+            </div>
+            <a href="#" class="inline-btn">view playlists</a>
+         </div>
+   
+         <div class="box">
+            <div class="flex">
+               <i class="fas fa-heart"></i>
+               <div>
+                  <span>33</span>
+                  <p>videos liked</p>
+               </div>
+            </div>
+            <a href="#" class="inline-btn">view liked</a>
+         </div>
+   
+         <div class="box">
+            <div class="flex">
+               <i class="fas fa-comment"></i>
+               <div>
+                  <span>12</span>
+                  <p>videos comments</p>
+               </div>
+            </div>
+            <a href="#" class="inline-btn">view comments</a>
+         </div>
+   
+      </div>
+   </div>
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- custom js file link  -->
+<script src="js/script.js"></script>
+
+   
+</body>
+</html>

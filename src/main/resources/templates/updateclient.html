@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>update</title>
+
+   <!-- font awesome cdn link  -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+
+  <style>
+ 
+ @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700&display=swap');
+
+:root{
+   --main-color:#8e44ad;
+   --red:#e74c3c;
+   --orange:#f39c12;
+   --light-color:#888;
+   --light-bg:#eee;
+   --black:#2c3e50;
+   --white:#fff;
+   --border:.1rem solid rgba(0,0,0,.2);
+}
+
+*{
+   font-family: 'Nunito', sans-serif;
+   margin:0; padding:0;
+   box-sizing: border-box;
+   outline: none; border:none;
+   text-decoration: none;
+}
+
+*::selection{
+   background-color: var(--main-color);
+   color:#fff;
+}
+
+html{
+   font-size: 62.5%;
+   overflow-x: hidden;
+}
+
+html::-webkit-scrollbar{
+   width: 1rem;
+   height: .5rem;
+}
+
+html::-webkit-scrollbar-track{
+   background-color: transparent;
+}
+
+html::-webkit-scrollbar-thumb{
+   background-color: var(--main-color);
+}
+
+body{
+   background-color: var(--light-bg);
+   padding-left: 30rem;
+}
+
+body.dark{
+   --light-color:#aaa;
+   --light-bg:#333;
+   --black:#fff;
+   --white:#222;
+   --border:.1rem solid rgba(255,255,255,.2);
+}
+
+body.active{
+   padding-left: 0;
+}
+
+section{
+   padding:2rem;
+   margin: 0 auto;
+   max-width: 1200px;
+}
+
+.heading{
+   font-size: 2.5rem;
+   color:var(--black);
+   margin-bottom: 2.5rem;
+   border-bottom: var(--border);
+   padding-bottom: 1.5rem;
+   text-transform: capitalize;
+}
+
+.inline-btn,
+.inline-option-btn,
+.inline-delete-btn,
+.btn,
+.delete-btn,
+.option-btn{
+   border-radius: .5rem;
+   color:#fff;
+   font-size: 1.8rem;
+   cursor: pointer;
+   text-transform: capitalize;
+   padding:1rem 3rem;
+   text-align: center;
+   margin-top: 1rem;
+}
+
+.btn,
+.delete-btn,
+.option-btn{
+   display: block;
+   width: 100%;
+}
+
+.inline-btn,
+.inline-option-btn,
+.inline-delete-btn{
+   display: inline-block;
+}
+
+.btn,
+.inline-btn{
+   background-color: var(--main-color);
+}
+
+.option-btn,
+.inline-option-btn{
+   background-color:var(--orange);
+}
+
+.delete-btn,
+.inline-delete-btn{
+   background-color: var(--red);
+}
+
+.inline-btn:hover,
+.inline-option-btn:hover,
+.inline-delete-btn:hover,
+.btn:hover,
+.delete-btn:hover,
+.option-btn:hover{
+   background-color: var(--black);
+   color: var(--white);
+}
+
+.flex-btn{
+   display: flex;
+   gap: 1rem;
+}
+
+
+   @media (max-width:450px){
+
+html{
+   font-size: 50%;
+}
+
+.flex-btn{
+   gap: 0;
+   flex-flow: column;
+}
+
+.home-grid .box-container{
+   grid-template-columns: 1fr;
+}
+
+.about .row .image img{
+   height: 25rem;
+}
+   }
+   
+
+.form-container{
+   min-height: calc(100vh - 20rem);
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+.form-container form{
+   background-color: var(--white);
+   border-radius: .5rem;
+   padding: 2rem;
+   width: 50rem;
+}
+
+.form-container form h3{
+   font-size: 2.5rem;
+   text-transform: capitalize;
+   color: var(--black);
+   text-align: center;
+}
+
+.form-container form p{
+   font-size: 1.7rem;
+   color: var(--light-color);
+   padding-top: 1rem;
+}
+
+.form-container form p span{
+   color: var(--red);
+}
+
+.form-container form .box{
+   font-size: 1.8rem;
+   color: var(--black);
+   border-radius: .5rem;
+   padding: 1.4rem;
+   background-color: var(--light-bg);
+   width: 100%;
+   margin: 1rem 0;
+}
+
+  </style>
+
+</head>
+<body>
+
+
+<section class="form-container">
+
+   <form action="" method="post" enctype="multipart/form-data">
+      <h3>update profile</h3>
+      <p>update name</p>
+      <input type="text" name="name" placeholder="shaikh anas" maxlength="50" class="box">
+      <p>update email</p>
+      <input type="email" name="email" placeholder="shaikh@gmail.come" maxlength="50" class="box">
+      <p>previous password</p>
+      <input type="password" name="old_pass" placeholder="enter your old password" maxlength="20" class="box">
+      <p>new password</p>
+      <input type="password" name="new_pass" placeholder="enter your old password" maxlength="20" class="box">
+      <p>confirm password</p>
+      <input type="password" name="c_pass" placeholder="confirm your new password" maxlength="20" class="box">
+      <p>update pic</p>
+      <input type="file" accept="image/*" class="box">
+      <input type="submit" value="update profile" name="submit" class="btn">
+   </form>
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+</body>
+</html>

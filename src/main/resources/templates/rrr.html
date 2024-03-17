@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" th:href="@{/css/style3.css}">
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+    <link rel="stylesheet " th:href="@{/css/style3.css}">
+</head>
+<body>
+<input type="checkbox" id="menu-toggle">
+<div class="sidebar">
+    <div class="side-header">
+        <h3>M<span>odern</span></h3>
+    </div>
+
+    <div class="side-content">
+        <div class="profile">
+            <div class="profile-img bg-img" ></div>
+
+
+        </div>
+
+        <div class="side-menu">
+            <ul>
+                <li>
+                    <a th:href="@{/donnee}" class="active">
+                        <span class="las la-home"></span>
+                        <small>Dashboard</small>
+                    </a>
+                </li>
+                <li>
+                    <a th:href="@{/donneefreelancer}">
+                        <span class="las la-user-alt"></span>
+                        <small>Freelancer</small>
+                    </a>
+                </li>
+                <li>
+                    <a th:href="@{/donneeClient}">
+                        <span class="las la-user-alt"></span>
+                        <small>Client</small>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="">
+                        <span class="las la-clipboard-list"></span>
+                        <small>Projects</small>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <span class="las la-clipboard-list"></span>
+                        <small>WorkSample</small>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <span class="las la-shopping-cart"></span>
+                        <small>Orders</small>
+                    </a>
+                </li>
+
+
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="main-content">
+
+    <header>
+        <div class="header-content">
+            <label for="menu-toggle">
+                <span class="las la-bars"></span>
+            </label>
+
+            <div class="header-menu">
+                <label >
+                    <span class="las la-search"></span>
+                </label>
+
+                <div class="notify-icon">
+                    <span class="las la-envelope"></span>
+                    <span class="notify">4</span>
+                </div>
+
+                <div class="notify-icon">
+                    <span class="las la-bell"></span>
+                    <span class="notify">3</span>
+                </div>
+
+                <div class="user">
+                    <div class="bg-img" ></div>
+
+                    <span class="las la-power-off"></span>
+                    <span sec:authorize="isAuthenticated">
+        <a th:href="@{/logout}">
+         Logout
+
+        </a>
+
+        </span>
+                </div>
+            </div>
+        </div>
+    </header>
+<main>
+
+    <div class="page-header">
+        <h1>Dashboard</h1>
+        <small>Home / Dashboard</small>
+    </div>
+
+    <div class="page-content">
+
+        <div class="analytics">
+
+            <div class="card">
+                <div class="card-head">
+                    <h2>107,200</h2>
+                    <span class="las la-user-friends"></span>
+                </div>
+                <div class="card-progress">
+                    <small>User activity this month</small>
+                    <div class="card-indicator">
+                        <div class="indicator one"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-head">
+                    <h2>340,230</h2>
+                    <span class="las la-eye"></span>
+                </div>
+                <div class="card-progress">
+                    <small>Page views</small>
+                    <div class="card-indicator">
+                        <div class="indicator two" style="width: 80%"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-head">
+                    <h2>$653,200</h2>
+                    <span class="las la-shopping-cart"></span>
+                </div>
+                <div class="card-progress">
+                    <small>Monthly revenue growth</small>
+                    <div class="card-indicator">
+                        <div class="indicator three" style="width: 65%"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-head">
+                    <h2>47,500</h2>
+                    <span class="las la-envelope"></span>
+                </div>
+                <div class="card-progress">
+                    <small>New E-mails received</small>
+                    <div class="card-indicator">
+                        <div class="indicator four" ></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="records table-responsive">
+
+            <div class="record-header">
+                <div class="add">
+                    <span>Entries</span>
+                    <select >
+                        <option value="">ID</option>
+                    </select>
+                    <a th:href="@{/saveuser}"> <button >Add record</button></a>
+                </div>
+
+                <div class="browse">
+                    <input type="search" placeholder="Search" class="record-search">
+                    <select name="" id="">
+                        <option value="">Status</option>
+                    </select>
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+
+    <div class="page-header">
+<h1>List De User</h1>
+
+    <table width="100%">
+        <thead >
+        <tr style="  font-size: 25px">
+            <th >Id</th>
+            <th><span class="las la-sort"></span> FullName</th>
+            <th><span class="las la-sort"></span> Email</th>
+            <th><span class="las la-sort"></span> Phone</th>
+            <th><span class="las la-sort"></span> Country</th>
+            <th><span class="las la-sort"></span> ACTIONS</th>
+
+        </tr>
+
+        </thead>
+        <tbody style="font-size: 20px">
+        <tr th:each="User : ${donnee}">
+         <th>   <small th:text="${User.id}"></small></th>
+            <th>
+                <div class="client">
+
+                    <div class="client-info">
+
+                        <small th:text="${User.fullname}"></small>
+                    </div>
+                </div>
+            </th>
+            <th >
+               <small th:text="${User.email}"></small>
+            </th>
+            <th>
+                <small th:text="${User.phone}"></small>
+            </th>
+            <th>
+                <small th:text="${User.country}"></small>
+            </th>
+            <th>
+                <div class="actions">
+                    <a th:href="@{/updateuser/{id}(id=${User.id})}">
+                        <button type="button" class="btn btn-primary btn-sm" style="color:green">Update</button></a>
+                    <a th:href="@{/deleteuser/{id}(id=${User.id})}">
+                        <button type="button" class="btn btn-secondary btn-sm" style="color: red" >Remove</button></a>
+
+                </div>
+
+        </tr>
+
+        </tbody>
+
+
+</table>
+
+    </div>
+</main>
+</div>
+</body>
+</html>
